@@ -1,0 +1,338 @@
+/*====================================
+            General
+======================================*/
+
+/*main {
+    position: absolute;
+    z-index: 75;
+}*/
+
+:root {
+    font-size: 16px;
+    /*font-family: "Open Sans";*/
+    --text-primary: #b6b6b6;        /*these are css variables. they start with the double hyphen*/
+    --text-secondary: #ececec;      
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+}
+
+body {
+    color: black;
+   /* background-color: white;*/
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.pgTitle {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 43%;
+    color: white;
+    font-size: 50px;
+    font-family: "Red Hat Display", sans-serif;
+    letter-spacing: 5px;
+}
+/*====================================
+            Nav Bar
+======================================*/
+
+
+
+.navbar {
+    width: 5rem;        /*notice that it matches the margin0left in the main tag*/
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    background-color: var(--bg-primary);  /*this is how out color variables in the pseudo root element is called upon to be used*/
+    transition: width 200ms ease;         /*this is the animation for the navbar to expand with grace*/
+}
+
+.navbar-nav {
+    list-style: none;       /*the ul in the html will be our flex container*/
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.nav-link:hover {
+    color: var(--text-secondary);
+}
+
+.link-text {                /*for all the span tags not to show unless the user hovers over*/
+    display: none;
+    margin-left: 1rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.nav-link i {               /*for all the icon logo tags*/
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.navbar:hover {             /*the animation to expand the navbar when hovered over*/
+    width: 16rem;
+}
+
+.navbar:hover .link-text {  /*shows the text of the icons when the navbar is hovered over*/
+    display: block;
+}
+
+/*====================================
+            Footer(for every page)
+======================================*/
+.line {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background: rgb(122, 153, 179);
+    background-image: linear-gradient(to bottom right, rgb(110, 174, 233), rgb(25, 57, 94));
+}
+
+.line-1 {
+    z-index: 15;
+    opacity: 0.5;
+}
+.line-2 {
+    z-index: 10;
+    opacity: 0.7;
+}
+.line-3 {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.wave1 {
+    /*-webkit-background-size: 50% 80px;*/
+    /*background-size: 10% 20%;*/
+    animation: animate 5s linear infinite;
+}
+
+.wave2 {
+   /* -webkit-background-size: 50% 100px;*/
+    /*background-size: 20% 50%;*/
+    animation: animate 12s linear infinite;
+}
+
+.wave3 {
+   /* -webkit-background-size: 50% 80px;*/
+   /* background-size: 10% 20%;*/
+    animation: animate 18s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.5);
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+}
+
+/*===============================================================================================================
+                                                     Home Page
+===============================================================================================================*/
+.mid-text {
+    position: absolute;
+    z-index: 50;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mid-text h1 {
+    color: white;
+    font-family: ;
+    font-size: 50px;
+    text-align: center;
+    z-index: 50;
+}
+
+.mid-text h1::first-letter {
+    font-size: 60px;
+}
+
+
+
+/*====================================
+            About Page
+======================================*/
+
+.about-middle-container {
+    position: absolute;
+    z-index: 75;
+    width: 25%;
+    height: 500px;
+    top: 20%;
+    left: 35%;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.about-middle-container > p {
+
+}
+
+/*====================================
+            Skills Page
+======================================*/
+
+#skills-list {
+    position: absolute;
+    top: 7%;
+    left: 38%;
+    z-index: 50;
+    list-style: none;
+}
+
+#skills-list li {
+    font-size: xx-large;
+    margin-top: 20px;
+    padding: 10px 50px;
+    color: var(--bg-primary);
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+#skills-list li i {
+    margin-right: 5px;
+}
+
+/*====================================
+            Projects Page
+======================================*/
+
+.link {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 30px;
+    height: 50px;
+    width: 150px;
+    padding-left: 5px;
+    margin: 20px;
+    margin-left: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.7s ease-out;
+    z-index: 75;
+    background-color: white;
+    color: var(--bg-primary);
+    font-family: 'Source Code Pro', monospace;
+  }
+  
+  .link > h6 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  
+  .link:hover {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    z-index: 100;
+  }
+  
+  #links-container {
+    display: flex;
+    z-index: 75;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    height: 50%;
+    width: 60%;
+  }
+  
+  #container {
+    position: absolute;
+    z-index: 75;
+    top: 20%;
+    left: 35%;
+  }
+
+/*====================================
+            Contact Page
+======================================*/
+
+#contact {
+    position: absolute;
+    z-index: 75;
+    display: grid;
+    height: 80%;
+    width: 100%;
+    place-items: center;
+}
+
+.wrapper .button {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 25px 15px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+    width: 225px;
+}
+
+.wrapper .button .icon {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+    margin-top: 20px;
+    color: var(--bg-primary);
+}
+
+.wrapper .button .icon i {
+    font-size: 25px;
+    line-height: 60px;
+}
+
+.wrapper .button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    font-family: "Source Code Pro", monospace;
+    color: var(--bg-primary);
+    font-weight: 400;
+}
